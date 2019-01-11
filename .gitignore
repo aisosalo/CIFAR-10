@@ -102,3 +102,43 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Compiled source
+*.dll
+*.o
+*.pyc
+*.class
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.lock
+*.tmp
+
+# IDE config files
+.idea/workspace.xml
+
+# Markup
+*.html
+*.xml
+
+# Folders
+data/
+venv/
+snapshots/
+log/
+__pycache__/
+logs/
+.idea/
+
+# Files
+temp.py
