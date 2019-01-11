@@ -106,3 +106,13 @@ Research Unit of Medical Imaging, Physics and Technology is acknowledged for pro
 ## Authors
 
 Antti Isosalo & Aleksei Tiulpin, University of Oulu, 2018-
+
+## References
+
+### Model Architecture
+
+* Zagoruyko, Sergey, and Nikos Komodakis. "Wide Residual Networks." Proceedings of the British Machine Vision Conference (BMVC), 2016. [arXiv:1605.07146](https://arxiv.org/abs/1605.07146),
+
+### Data Augmentation
+
+* Tiulpin, Aleksei, "[Streaming Over Lightweight Data Transformations](https://mipt-oulu.github.io/solt/)." Research Unit of Medical Imaging, Physics and Technology, University of Oulu, Finalnd, 2018.
