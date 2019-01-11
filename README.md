@@ -16,7 +16,7 @@ TODO
 
 ## Model
 
-We have made a PyTorch implementation of [Sergey Zagoruyko's](https://github.com/szagoruyko/wide-residual-networks) VGG like network for the task.
+We have made a PyTorch implementation of [Sergey Zagoruyko and Nikos Komodakis](https://github.com/szagoruyko/wide-residual-networks) VGG like network for the task.
 
 ```
 DataParallel(
@@ -81,6 +81,13 @@ DataParallel(
   )
 )
 ```
+
+
+## Data Augmentations
+
+In this implementation we only use [horizontal flips](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.RandomFlip). The images are padded into size `34x34` using [reflective padding](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.PadTransform) and then crop the images back into size `32x32`. [Random cropping](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.CropTransform) is used as an augmentation in the training and then [center cropping](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.CropTransform) in the validation phase.
+
+[Sergey Zagoruyko and Nikos Komodakis](https://github.com/szagoruyko/wide-residual-networks) seem to have used whitened data. We use the original data with [contrast transformation](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.PadTransform).
 
 
 ## Training
