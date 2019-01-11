@@ -73,7 +73,7 @@ DataParallel(
 ## Requirements
 
 * Python >= 3.6
-* [tensorboardX](https://github.com/lanpa/tensorboardX) (optional)
+* [tensorboardX](https://tensorboardx.readthedocs.io/en/latest/index.html) (optional)
 
 ## Usage
 
