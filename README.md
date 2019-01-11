@@ -2,6 +2,18 @@
 
 We present here our solution to the famous machine learning problem of image classification with [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset. The aim is to classify learn and assign a category for 32x32 pixel images.
 
+
+## Requirements
+
+* Python >= 3.6
+* [tensorboardX](https://tensorboardx.readthedocs.io/en/latest/index.html) (optional)
+
+
+## Dataset
+
+TODO
+
+
 ## Model
 
 We have made a PyTorch implementation of [Sergey Zagoruyko's](https://github.com/szagoruyko/wide-residual-networks) VGG like network for the task.
@@ -70,18 +82,8 @@ DataParallel(
 )
 ```
 
-## Requirements
 
-* Python >= 3.6
-* [tensorboardX](https://tensorboardx.readthedocs.io/en/latest/index.html) (optional)
-
-## Usage
-
-### Dataset
-
-TODO
-
-### Training
+## Training
 
 In PyCharm
 
@@ -92,6 +94,8 @@ $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --
 ```
 $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --bs 128 --optimizer adam --lr 0.001 --wd 1e-3 --learning_rate_decay 0.1 --color_space rgb
 ```
+
+
 ## Results for CIFAR-10
 
 | Network          | Optimizer    | Accuracy (%) | Epochs (#)|
@@ -99,13 +103,16 @@ $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --
 | VGG              | SGD          | 85           | -         |
 | VGG              | Adam         | -            | -         |
 
+
 ## Acknowledgements
 
 [Research Unit of Medical Imaging, Physics and Technology](http://www.mipt-oulu.fi/) is acknowledged for providing the hardware for running the experiments.
 
+
 ## Authors
 
 Antti Isosalo & Aleksei Tiulpin, University of Oulu, 2018-
+
 
 ## References
 
