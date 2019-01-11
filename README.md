@@ -6,7 +6,7 @@ We present here our solution to the famous machine learning problem of image cla
 ## Requirements
 
 * Python 3.6
-* [tensorboardX](https://tensorboardx.readthedocs.io/en/latest/index.html) (optional)
+* [tensorboardX](https://tensorboardx.readthedocs.io/en/latest/index.html)
 
 
 ## Dataset
