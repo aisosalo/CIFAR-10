@@ -118,7 +118,7 @@ $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --
 
 ## Authors
 
-Antti Isosalo & Aleksei Tiulpin, University of Oulu, 2018-
+[Antti Isosalo](https://github.com/aisosalo/) & [Aleksei Tiulpin](https://github.com/lext), [University of Oulu](https://www.oulu.fi/university/), 2018-
 
 
 ## References
