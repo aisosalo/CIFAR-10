@@ -101,7 +101,7 @@ $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --
 
 ## Acknowledgements
 
-Research Unit of Medical Imaging, Physics and Technology is acknowledged for providing the hardware for running the experiments.
+[Research Unit of Medical Imaging, Physics and Technology](http://www.mipt-oulu.fi/) is acknowledged for providing the hardware for running the experiments.
 
 ## Authors
 
