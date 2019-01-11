@@ -1,6 +1,6 @@
 # PyTorch Implementation of CIFAR-10 Image Classification Pipeline Using VGG Like Network
 
-We present here our solution to the famous machine learning problem of image classification with [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset with 60000 small images. The aim is to learn and assign a category for `32x32` pixel images.
+We present here our solution to the famous machine learning problem of image classification with [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset with 60000 labeled images. The aim is to learn and assign a category for these `32x32` pixel images.
 
 
 ## Requirements
@@ -12,6 +12,8 @@ We present here our solution to the famous machine learning problem of image cla
 ## Dataset
 
 TODO
+
+We use here only the 50000 images originally meant for training.
 
 
 ## Model
