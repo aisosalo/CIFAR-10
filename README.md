@@ -136,3 +136,7 @@ $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --
 ### Data Augmentation
 
 * Tiulpin, Aleksei, "[Streaming Over Lightweight Data Transformations](https://mipt-oulu.github.io/solt/)." Research Unit of Medical Imaging, Physics and Technology, University of Oulu, Finalnd, 2018.
+
+### Dataset
+
+* Krizhevsky, Alex, and Geoffrey Hinton. "Learning multiple layers of features from tiny images". Vol. 1. No. 4. Technical report, University of Toronto, 2009.
