@@ -139,4 +139,4 @@ $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --
 
 ### Dataset
 
-* Krizhevsky, Alex, and Geoffrey Hinton. "Learning multiple layers of features from tiny images". Vol. 1. No. 4. Technical report, University of Toronto, 2009.
+* Krizhevsky, Alex, and Geoffrey Hinton. "[Learning multiple layers of features from tiny images](https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf)." Vol. 1. No. 4. Technical report, University of Toronto, 2009.
