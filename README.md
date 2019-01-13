@@ -131,7 +131,7 @@ $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --
 
 ### Model Architecture
 
-* Zagoruyko, Sergey, and Nikos Komodakis. "Wide Residual Networks." Proceedings of the British Machine Vision Conference (BMVC), 2016. [arXiv:1605.07146](https://arxiv.org/abs/1605.07146),
+* Zagoruyko, Sergey, and Nikos Komodakis. "[Wide Residual Networks](https://arxiv.org/abs/1605.07146)." Proceedings of the British Machine Vision Conference (BMVC), 2016.
 
 ### Data Augmentation
 
