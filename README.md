@@ -17,7 +17,8 @@ The CIFAR-10 dataset, as it is provided, consists of 5 batches of training image
 
 Each test batch consists of exactly 1000 randomly-selected images from each class. The training batches contain images in random order, some training batches having more images from one class than another. Together, the training batches contain exactly 5000 images from each class.
 
-Here we have used only the 50000 images originally meant for training.
+Here we have used only the 50000 images originally meant for training. [Stratified K-Folds cross-validation]()is used to spllit the data so that the percentage of samples for each class is preserved.
+
 
 
 ## Model
@@ -93,7 +94,7 @@ DataParallel(
 
 In this implementation we only use [horizontal flips](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.RandomFlip). The images are padded into size `34x34` using [reflective padding](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.PadTransform) and then crop the images back into size `32x32`. [Random cropping](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.CropTransform) is used as an augmentation in the training and then [center cropping](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.CropTransform) in the validation phase.
 
-In their experiments, [Sergey Zagoruyko and Nikos Komodakis](https://github.com/szagoruyko/wide-residual-networks) seem to have used whitened data. We use the original data with [contrast transformation](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.PadTransform).
+In their experiments, [Sergey Zagoruyko and Nikos Komodakis](https://github.com/szagoruyko/wide-residual-networks) seem to have used whitened data. -We use the original data with [contrast transformation](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.PadTransform).-
 
 
 ## Training
@@ -101,7 +102,7 @@ In their experiments, [Sergey Zagoruyko and Nikos Komodakis](https://github.com/
 In PyCharm
 
 ```
-$ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --bs 64 --optimizer sgd --lr 0.1 --wd 5e-4 --learning_rate_decay 0.2 --color_space rgb --set_nesterov True
+$ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --bs 128 --optimizer sgd --lr 0.1 --wd 5e-4 --learning_rate_decay 0.2 --color_space rgb --set_nesterov True
 ```
 
 ```
@@ -113,7 +114,7 @@ $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --
 
 | Network          | Optimizer    | Accuracy (%) | Epochs (#)|
 |:----------------:|:------------:|:------------:|:---------:|
-| VGG              | SGD          | 85           | -         |
+| VGG              | SGD          | -            | -         |
 | VGG              | Adam         | -            | -         |
 
 
