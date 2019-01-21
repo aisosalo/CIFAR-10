@@ -11,8 +11,6 @@ We present here our solution to the famous machine learning problem of image cla
 
 ## Dataset
 
-TODO
-
 The CIFAR-10 dataset, as it is provided, consists of 5 batches of training images which sum up to 50000 and a batch of 10000 test images.
 
 Each test batch consists of exactly 1000 randomly-selected images from each class. The training batches contain images in random order, some training batches having more images from one class than another. Together, the training batches contain exactly 5000 images from each class.
