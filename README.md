@@ -104,7 +104,7 @@ $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --
 ```
 
 ```
-$ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --bs 128 --optimizer adam --lr 0.001 --wd 1e-3 --learning_rate_decay 0.1 --color_space rgb
+$ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vgg --bs 128 --optimizer adam --lr 0.1 --wd 1e-3 --learning_rate_decay 0.1 --color_space rgb
 ```
 
 
