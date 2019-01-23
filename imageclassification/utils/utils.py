@@ -33,7 +33,6 @@ https://github.com/pytorch/vision/blob/master/LICENSE#L1-L29
 
 """
 
-
 import os
 import os.path
 
