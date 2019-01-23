@@ -10,15 +10,20 @@ def parse_args():
                                                    ], default='CIFAR10')
     parser.add_argument('--snapshots', default='/snapshots')
     parser.add_argument('--logs', default='/logs')
+    parser.add_argument('--train_meta', default='train_meta.csv')
+    
     parser.add_argument('--experiment', type=str, choices=['vggbndrop',
                                                            'vgg'
                                                            ], default='vgg')
+    
     parser.add_argument('--num_classes', type=int, choices=[10, # CIFAR10
                                                             100 # CIFAR100
                                                             ], default=10)
+    
     parser.add_argument('--color_space', type=str, choices=['yuv',
                                                             'rgb'
                                                             ], default='rgb')
+    
     parser.add_argument('--optimizer', type=str, choices=['adam',
                                                           'sgd'
                                                           ], default='sgd')
