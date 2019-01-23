@@ -105,13 +105,13 @@ def init_dataset(path, dataset):  # path = kvs['args'].dataset_root
 def init_metadata():
     kvs = GlobalKVS()
 
-    meta = pd.read_csv(os.path.join(kvs['args'].metadata_root, kvs['args'].dataset_name, kvs['args'].dataset_name + '_train_filenames.csv'))
+    meta = pd.read_csv(os.path.join(kvs['args'].metadata_root, kvs['args'].dataset_name, kvs['args'].train_meta'))
 
     print(f'Dataset (form CSV file) has {meta.shape[0]} entries')
 
     kvs.update('metadata', meta)
 
-    skf = StratifiedKFold(n_splits=kvs['args'].n_folds)  # This cross-validation object is a variation of KFold that returns stratified folds, preserving the percentage of samples for each class
+    skf = StratifiedKFold(n_splits=kvs['args'].n_folds)  # this cross-validation object is a variation of KFold that returns stratified folds, preserving the percentage of samples for each class
 
     if 'CIFAR10' in kvs['args'].dataset_name:
         cv_split = [x for x in skf.split(kvs['metadata']['Filename'].astype(str),
