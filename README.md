@@ -162,6 +162,8 @@ In their experiments, [Sergey Zagoruyko and Nikos Komodakis](https://github.com/
 
 `YUV` color space was proposed to be used by [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch). We run our experimets without the `RGB` to `YUV` conversion.
 
+Data is normalized in the usual way with mean and standard deviation calculated across the 50000 images, as it can, e.g., speed up the training.
+
 
 ## Training
 
