@@ -162,7 +162,7 @@ In this implementation we only use [horizontal flips](https://mipt-oulu.github.i
 
 In their experiments, [Sergey Zagoruyko and Nikos Komodakis](https://github.com/szagoruyko/wide-residual-networks) sem to have used whitened data. We use here the original data.
 
-YUV color space was proposed to be used by [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch). We run our experimets without the `RGB` to `YUV` conversion.
+`YUV` color space was proposed to be used by [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch). We run our experimets without the `RGB` to `YUV` conversion.
 
 
 ## Training
