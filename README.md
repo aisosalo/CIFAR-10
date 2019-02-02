@@ -15,12 +15,14 @@ The CIFAR-10 dataset, as it is provided, consists of 5 batches of training image
 
 Each test batch consists of exactly 1000 randomly-selected images from each class. The training batches contain images in random order, some training batches having more images from one class than another. Together, the training batches contain exactly 5000 images from each class.
 
-Here we have used only the 50000 images originally meant for training. [Stratified K-Folds cross-validation]()is used to split the data so that the percentage of samples for each class is preserved.
+Here we have used for training and validation purposes only the 50000 images originally meant for training. [Stratified K-Folds cross-validation]()is used to split the data so that the percentage of samples for each class is preserved. Several other reported implementations use the data as it is given and use the given 10000 sample testing set for validation.
 
 
 ## Model
 
 We have made a PyTorch implementations of [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch) and [Sergey Zagoruyko and Nikos Komodakis](https://github.com/szagoruyko/wide-residual-networks) VGG like networks for the task.
+
+###VGGBNDrop
 
 ```
 DataParallel(
@@ -90,6 +92,8 @@ DataParallel(
   )
 )
 ```
+
+###VGG
 
 ```
 DataParallel(
