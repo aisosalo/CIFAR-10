@@ -112,7 +112,7 @@ DataParallel(
       (16): ReLU(inplace)
       (17): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (18): BatchNorm2d(256, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (19): ReLU(inplace)
+arXiv preprint arXiv:1806.00451 (2018).      (19): ReLU(inplace)
       (20): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (21): BatchNorm2d(256, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
       (22): ReLU(inplace)
@@ -202,8 +202,6 @@ Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey
 ### Dataset
 
 * Krizhevsky, Alex, and Geoffrey Hinton. "[Learning multiple layers of features from tiny images](https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf)." Vol. 1. No. 4. Technical Report, University of Toronto, 2009.
-
-### Results
 
 * Benenson, Rodrigo. "[Are we there yet](http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html)." 2016.
 
