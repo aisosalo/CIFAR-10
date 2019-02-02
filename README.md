@@ -199,6 +199,8 @@ Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey
 
 * Zagoruyko, Sergey, and Nikos Komodakis. "[Wide Residual Networks](https://arxiv.org/abs/1605.07146)." Proceedings of the British Machine Vision Conference (BMVC), 2016.
 
+* Zagoruyko, Sergey. "[92.45% on CIFAR-10](https://github.com/szagoruyko/cifar.torch)." 2015
+
 ### Data Augmentation
 
 * Tiulpin, Aleksei, "[Streaming Over Lightweight Data Transformations](https://mipt-oulu.github.io/solt/)." Research Unit of Medical Imaging, Physics and Technology, University of Oulu, Finalnd, 2018.
