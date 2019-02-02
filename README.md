@@ -176,11 +176,7 @@ $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vggbnd
 
 ## Results for CIFAR-10
 
-Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch).
-
-| Network          | Optimizer    | Accuracy (%) | Epochs (#)|
-|:----------------:|:------------:|:------------:|:---------:|
-| VGGBNDrop        | SGD          | 90.0         | 253       |
+Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch) using `SGD` as optimizer.
 
 
 ## Acknowledgements
