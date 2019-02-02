@@ -22,7 +22,7 @@ Here we have used for training and validation purposes only the 50000 images ori
 
 We have made a PyTorch implementations of [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch) and [Sergey Zagoruyko and Nikos Komodakis](https://github.com/szagoruyko/wide-residual-networks) VGG like networks for the task.
 
-### VGGBNDrop
+### VGG with BatchNormalization and Dropout
 
 ```
 DataParallel(
@@ -93,7 +93,7 @@ DataParallel(
 )
 ```
 
-### VGG
+### VGG with BatchNormalization without Dropout 
 
 ```
 DataParallel(
