@@ -206,3 +206,5 @@ Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey
 ### Results
 
 * Benenson, Rodrigo. "[Are we there yet](http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html)." 2016.
+
+* Recht, Benjamin, Roelofs, Rebecca, Schmidt, Ludwig, and Shankar, Vaishaal. "[Do CIFAR-10 Classifiers Generalize to CIFAR-10?](https://arxiv.org/abs/1806.00451)." arXiv preprint arXiv:1806.00451, 2018.
