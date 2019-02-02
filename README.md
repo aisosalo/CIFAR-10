@@ -3,12 +3,6 @@
 We present here our solution to the famous machine learning problem of image classification with [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset with 60000 labeled images. The aim is to learn and assign a category for these `32x32` pixel images.
 
 
-## Requirements
-
-* Python 3.6
-* [tensorboardX](https://tensorboardx.readthedocs.io/en/latest/index.html)
-
-
 ## Dataset
 
 The CIFAR-10 dataset, as it is provided, consists of 5 batches of training images which sum up to 50000 and a batch of 10000 test images.
