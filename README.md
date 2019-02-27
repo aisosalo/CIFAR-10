@@ -112,7 +112,7 @@ DataParallel(
       (16): ReLU(inplace)
       (17): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (18): BatchNorm2d(256, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-arXiv preprint arXiv:1806.00451 (2018).      (19): ReLU(inplace)
+      (19): ReLU(inplace)
       (20): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (21): BatchNorm2d(256, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
       (22): ReLU(inplace)
