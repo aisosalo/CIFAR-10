@@ -9,13 +9,13 @@ def aslist(lst):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset_root', default='/data/')
-    parser.add_argument('--metadata_root', default='/data/')
+    parser.add_argument('--dataset_root', default='data/')
+    parser.add_argument('--metadata_root', default='data/')
     parser.add_argument('--dataset_name', choices=['CIFAR10',
                                                    'CIFAR100',
                                                    ], default='CIFAR10')
-    parser.add_argument('--snapshots', default='/snapshots')
-    parser.add_argument('--logs', default='/logs')
+    parser.add_argument('--snapshots', default='snapshots/')
+    parser.add_argument('--logs', default='logs/')
     parser.add_argument('--train_meta', default='train_meta.csv')
     
     parser.add_argument('--experiment', type=str, choices=['vggbndrop',
