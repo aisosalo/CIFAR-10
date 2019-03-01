@@ -102,7 +102,7 @@ Data is normalized in the usual way with mean and standard deviation calculated 
 In PyCharm
 
 ```
-$ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vggbndrop --bs 128 --optimizer sgd --lr 0.1 --lr_drop "[160, 260]" --n_epochs 300 --wd 5e-4 --learning_rate_decay 0.2 --n_threads 12 --color_space yuv --set_nesterov True
+$ python run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vggbndrop --bs 128 --optimizer sgd --lr 0.1 --lr_drop "[160, 260]" --n_epochs 300 --wd 5e-4 --learning_rate_decay 0.2 --n_threads 12 --color_space yuv --set_nesterov True
 ```
 
 
