@@ -3,6 +3,10 @@ import pickle
 
 
 class GlobalKVS(object):
+    """
+    (c) Aleksei Tiulpin, Unversity of Oulu, 2018-
+
+    """
     _instance = None
     _d = dict()
 
