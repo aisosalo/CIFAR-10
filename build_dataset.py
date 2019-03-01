@@ -82,9 +82,9 @@ def build_cifar100_metadata(batch_list, expected_len):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset_root',
-                        default='/home/antti/tmp/data/')  # working dir
+                        default='')  # working dir
     parser.add_argument('--metadata_root',
-                        default='/home/antti/tmp/meta/')  # working dir
+                        default='')  # working dir
 
     parser.add_argument('--dataset', choices=['CIFAR10',
                                               'CIFAR100',
