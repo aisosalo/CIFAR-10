@@ -98,7 +98,7 @@ if __name__ == "__main__":
                                                    'CIFAR100',
                                                    ], default='CIFAR10')
     parser.add_argument('--snapshots', default='snapshots/CIFAR10')
-    parser.add_argument('--snapshot', default='')  # folder in args.snapshots
+    parser.add_argument('--snapshot', default='')  # subfolder in snapshots
 
     args = parser.parse_args()
 
