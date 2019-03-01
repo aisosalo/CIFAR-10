@@ -68,7 +68,7 @@ def init_session():
 def init_data_processing(ds):
     kvs = GlobalKVS()
 
-    train_augs = init_train_augs('r', 'r')  # random crop, reflective padding
+    train_augs = init_train_augs(crop_mode='r', pad_mode='r')  # random crop, reflective padding
 
     dataset = ImageClassificationDataset(ds, split=kvs['metadata'], color_space=kvs['args'].color_space, transformations=train_augs)
 
