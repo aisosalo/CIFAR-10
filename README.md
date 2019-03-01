@@ -110,22 +110,23 @@ $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vggbnd
 
 Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch) using `SGD` as optimizer.
 
-## Training and validation
+### Training and validation
 
 ![Loss over time](https://github.com/aisosalo/CIFAR-10/blob/master/plots/Loss_fold_0_2019_02_25_06_20.png)
 
 ![Validation accuracy over time](https://github.com/aisosalo/CIFAR-10/blob/master/plots/Accuracy_fold_0_2019_02_25_06_20.png)
 
-![Confusion Matrix, Epoch 40](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_39_2019_02_24_19_54.png)
+![Confusion Matrix, Validation, Epoch 40](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_39_2019_02_24_19_54.png)
 
-![Confusion Matrix, Epoch 80](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_79_2019_02_24_20_51.png)
+![Confusion Matrix, Validation, Epoch 80](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_79_2019_02_24_20_51.png)
 
-![Confusion Matrix, Epoch 120](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_119_2019_02_24_22_02.png)
+![Confusion Matrix, Validation, Epoch 120](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_119_2019_02_24_22_02.png)
 
-![Confusion Matrix, Epoch 160](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_159_2019_02_24_23_27.png)
+![Confusion Matrix, Validation, Epoch 160](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_159_2019_02_24_23_27.png)
 
-## Evaluation
+### Evaluation
 
+![Confusion Matrix, Evaluation](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_evaluation_2019_02_25.png)
 
 
 ## Acknowledgements
