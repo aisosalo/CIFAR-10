@@ -57,6 +57,6 @@ if __name__ == "__main__":
 
             metrics.log_metrics(writers[fold_id], train_loss, val_loss, gt, preds)
 
-            session.save_checkpoint(net, 'acc', 'gt')  # gt, greater than
+            session.save_checkpoint(net, 'val_loss', 'lt')  # lt, less than
             
             scheduler.step()
