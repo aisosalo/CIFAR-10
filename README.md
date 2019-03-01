@@ -110,6 +110,8 @@ $ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vggbnd
 
 Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch) using `SGD` as optimizer.
 
+![Loss over time](https://github.com/aisosalo/CIFAR-10/blob/master/plots/Loss_fold_0_2019_02_25_06_20.png)
+
 
 ## Acknowledgements
 
