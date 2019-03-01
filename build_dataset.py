@@ -12,6 +12,9 @@ import numpy as np
 
 from imageclassification.utils import download, pass_through
 
+TRAIN_LEN = 50000
+TEST_LEN = 10000
+
 
 def unpickle(file):
     """
@@ -27,12 +30,61 @@ def unpickle(file):
     return dict
 
 
+def build_cifar10_metadata(batch_list, expected_len):
+    fn = []
+    y = []
+    for batch in batch_list:
+        print('Processing file: ', batch[0])
+        data = unpickle(os.path.join(path, batch[0]))
+        lbl = data[b'labels']
+        fname = data[b'filenames']
+        y.append(lbl)
+        fn.append(fname)
+    fn_cat = np.concatenate(fn)
+    y_cat = np.concatenate(y)
+    df = pd.concat([pd.DataFrame((x.decode('UTF8') for x in fn_cat), columns=["Filename"]),
+                    pd.DataFrame(y_cat, columns=["Label"]),
+                    pd.DataFrame(list(range(1, len(y_cat) + 1)), columns=["ID"])
+                    ], axis=1)
+    if not len(df) == expected_len:
+        raise ValueError('Something went wrong with CIFAR-10 dataset.')
+
+    return df
+
+
+def build_cifar100_metadata(batch_list, expected_len):
+    fn = []
+    y_fine = []
+    y_coarse = []
+    for batch in batch_list:
+        print('Processing file: ', batch[0])
+        data = unpickle(os.path.join(path, batch[0]))
+        lbl = data[b'fine_labels']
+        g = data[b'coarse_labels']
+        fname = data[b'filenames']
+        y_fine.append(lbl)
+        y_coarse.append(g)
+        fn.append(fname)
+    fn_cat = np.concatenate(fn)
+    y_fine_cat = np.concatenate(y_fine)
+    y_coarse_cat = np.concatenate(y_coarse)
+    df = pd.concat([pd.DataFrame((x.decode('UTF8') for x in fn_cat), columns=["Filename"]),
+                    pd.DataFrame(y_fine_cat, columns=["Label"]),
+                    pd.DataFrame(y_coarse_cat, columns=["Group"]),
+                    pd.DataFrame(list(range(1, len(y_fine_cat) + 1)), columns=["ID"])
+                    ], axis=1)
+    if not len(df) == expected_len:
+        raise ValueError('Something went wrong with CIFAR-100 dataset.')
+
+    return df
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset_root',
-                        default='/data/')  # working dir
+                        default='/home/antti/tmp/data/')  # working dir
     parser.add_argument('--metadata_root',
-                        default='/data/')  # working dir
+                        default='/home/antti/tmp/meta/')  # working dir
 
     parser.add_argument('--dataset', choices=['CIFAR10',
                                               'CIFAR100',
@@ -79,62 +131,32 @@ if __name__ == "__main__":
         raise NotImplementedError
 
     # Download and check
+
     if pass_through(path, train_list + test_list):
         print('Files already downloaded and verified.')
     else:
         download(url, args.dataset_root, filename, tgz_md5, args.dataset + '/')
 
     # Create metadata
+
+    path = args.dataset_root + args.dataset + '/'
+
     print('Building metadata...')
     if 'CIFAR10' == args.dataset:
-        data = []
-        fn = []
-        y = []
-        for entry in train_list:
-            print('Processing file: ', entry[0])
-            data = unpickle(os.path.join(path, entry[0]))
-            lbl = data[b'labels']
-            fname = data[b'filenames']
-            y.append(lbl)
-            fn.append(fname)
-
-        fn_cat = np.concatenate(fn)
-        y_cat = np.concatenate(y)
-        df = pd.concat([pd.DataFrame((x.decode('UTF8') for x in fn_cat), columns=["Filename"]),
-                        pd.DataFrame(y_cat, columns=["Label"]),
-                        pd.DataFrame(list(range(1, len(y_cat) + 1)), columns=["ID"])
-                        ], axis=1)
-        if not len(df) == 50000:
-            raise ValueError('Something went wrong with CIFAR-10 dataset.')
+        train_df = build_cifar10_metadata(train_list, TRAIN_LEN)
+        test_df = build_cifar10_metadata(test_list, TEST_LEN)
     elif 'CIFAR100' == args.dataset:
-        data = []
-        fn = []
-        y_fine = []
-        y_coarse = []
-        for entry in train_list:
-            print('Processing file: ', entry[0])
-            data = unpickle(os.path.join(path, entry[0]))
-            lbl = data[b'fine_labels']
-            g = data[b'coarse_labels']
-            fname = data[b'filenames']
-            y_fine.append(lbl)
-            y_coarse.append(g)
-            fn.append(fname)
-
-        fn_cat = np.concatenate(fn)
-        y_fine_cat = np.concatenate(y_fine)
-        y_coarse_cat = np.concatenate(y_coarse)
-        df = pd.concat([pd.DataFrame((x.decode('UTF8') for x in fn_cat), columns=["Filename"]),
-                        pd.DataFrame(y_fine_cat, columns=["Label"]),
-                        pd.DataFrame(y_coarse_cat, columns=["Group"]),
-                        pd.DataFrame(list(range(1, len(y_fine_cat) + 1)), columns=["ID"])
-                        ], axis=1)
-        if not len(df) == 50000:
-            raise ValueError('Something went wrong with CIFAR-100 dataset.')
+        train_df = build_cifar100_metadata(train_list, TRAIN_LEN)
+        test_df = build_cifar100_metadata(test_list, TEST_LEN)
     else:
         raise NotImplementedError
 
     if not os.path.isfile(args.metadata_root + args.dataset + '/train_meta.csv'):
-        df.to_csv(args.metadata_root + args.dataset + '/train_meta.csv', sep=',', index=False)
+        train_df.to_csv(args.metadata_root + args.dataset + '/train_meta.csv', sep=',', index=False)
     else:
-        print('Metadata already exists.')
+        print('Train metadata already exists.')
+
+    if not os.path.isfile(args.metadata_root + args.dataset + '/test_meta.csv'):  #
+        test_df.to_csv(args.metadata_root + args.dataset + '/test_meta.csv', sep=',', index=False)
+    else:
+        print('Test metadata already exists.')
