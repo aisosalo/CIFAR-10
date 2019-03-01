@@ -5,10 +5,10 @@ import math
 
 
 class VGGBNDrop(nn.Module):
-    '''
+    """
     https://github.com/szagoruyko/cifar.torch/blob/master/models/vgg_bn_drop.lua
 
-    '''
+    """
     def __init__(self, num_classes, init_weights=True):
         super(VGGBNDrop, self).__init__()
         self.features = nn.Sequential(
@@ -119,10 +119,10 @@ class VGGBNDrop(nn.Module):
 
 
 class VGG(nn.Module):
-    '''
+    """
     https://github.com/szagoruyko/wide-residual-networks/blob/master/models/vgg.lua
 
-    '''
+    """
     def __init__(self, num_classes, init_weights=True):
         super(VGG, self).__init__()
         self.features = nn.Sequential(
@@ -154,12 +154,10 @@ class VGG(nn.Module):
             nn.BatchNorm2d(256, 1e-3),
             nn.ReLU(inplace=True),
 
-            #
             nn.Conv2d(256, 256, kernel_size=3, padding=1, bias=False),
             nn.BatchNorm2d(256, 1e-3),
             nn.ReLU(inplace=True),
 
-            #
             nn.Conv2d(256, 256, kernel_size=3, padding=1, bias=False),
             nn.BatchNorm2d(256, 1e-3),
             nn.ReLU(inplace=True),
@@ -174,12 +172,10 @@ class VGG(nn.Module):
             nn.BatchNorm2d(512, 1e-3),
             nn.ReLU(inplace=True),
 
-            #
             nn.Conv2d(512, 512, kernel_size=3, padding=1, bias=False),
             nn.BatchNorm2d(512, 1e-3),
             nn.ReLU(inplace=True),
 
-            #
             nn.Conv2d(512, 512, kernel_size=3, padding=1, bias=False),
             nn.BatchNorm2d(512, 1e-3),
             nn.ReLU(inplace=True),
@@ -211,10 +207,10 @@ class VGG(nn.Module):
             self._initialize_weights()
 
     def _initialize_weights(self):
-        '''
+        """
         https://github.com/szagoruyko/wide-residual-networks/blob/master/models/utils.lua#L3-L9
 
-        '''
+        """
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
                 n = m.kernel_size[0] * m.kernel_size[1] * m.out_channels  # v.kW*v.kH*v.nOutputPlane
