@@ -133,7 +133,7 @@ Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey
 
 [Research Unit of Medical Imaging, Physics and Technology](http://www.mipt-oulu.fi/) is acknowledged for providing the hardware for running the experiments.
 
-[Aleksei Tiulpin](https://github.com/lext) is acknowledged for kindly giving his permission to reproduce and adjust his pipeline scripts for this task.
+[Aleksei Tiulpin](https://github.com/lext) is acknowledged for kindly providing access to his pipeline scripts and giving his permission to reproduce and modify his pipeline for this task.
 
 
 ## Authors
