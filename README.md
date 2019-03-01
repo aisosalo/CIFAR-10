@@ -114,23 +114,37 @@ Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey
 
 As can be seen from the curves representing loss over time, the model starts to overfit around epoch 164.
 
-![Loss over time](https://github.com/aisosalo/CIFAR-10/blob/master/plots/Loss_fold_0_2019_02_25_06_20.png)
+<p align="center">
+  <img src="https://github.com/aisosalo/CIFAR-10/blob/master/plots/Loss_fold_0_2019_02_25_06_20.png" title="Loss over time">
+</p>
 
-![Validation accuracy over time](https://github.com/aisosalo/CIFAR-10/blob/master/plots/Accuracy_fold_0_2019_02_25_06_20.png)
+<p align="center">
+  <img src="https://github.com/aisosalo/CIFAR-10/blob/master/plots/Accuracy_fold_0_2019_02_25_06_20.png" title="Validation accuracy over time">
+</p>
 
-![Confusion Matrix, Validation, Epoch 40](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_39_2019_02_24_19_54.png)
+<p align="center">
+  <img src="https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_39_2019_02_24_19_54.png" title="Confusion Matrix, Validation, Epoch 40">
+</p>
 
-![Confusion Matrix, Validation, Epoch 80](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_79_2019_02_24_20_51.png)
+<p align="center">
+  <img src="https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_79_2019_02_24_20_51.png" title="Confusion Matrix, Validation, Epoch 80">
+</p>
 
-![Confusion Matrix, Validation, Epoch 120](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_119_2019_02_24_22_02.png)
+<p align="center">
+  <img src="https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_119_2019_02_24_22_02.png" title="Confusion Matrix, Validation, Epoch 120">
+</p>
 
-![Confusion Matrix, Validation, Epoch 160](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_159_2019_02_24_23_27.png)
+<p align="center">
+  <img src="https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_159_2019_02_24_23_27.png" title="Confusion Matrix, Validation, Epoch 160">
+</p>
 
 ### Evaluation
 
 Evaluation has been run using the model for which the validation loss was the best (see [`session.py`](https://github.com/aisosalo/CIFAR-10/blob/master/imageclassification/training/session.py#L152-L178) for details).
 
-![Confusion Matrix, Evaluation](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_evaluation_2019_02_25.png)
+<p align="center">
+  <img src="https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_evaluation_2019_02_25.png" title="Confusion Matrix, Evaluation">
+</p>
 
 
 ## Acknowledgements
