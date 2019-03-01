@@ -1,5 +1,11 @@
 import argparse
 
+import ast
+
+
+def aslist(lst):
+    return ast.literal_eval(lst)
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -36,7 +42,8 @@ def parse_args():
                                                      1e-2,
                                                      1e-1  # https://github.com/szagoruyko/wide-residual-networks/blob/master/logs/vgg_24208029/
                                                      ], default=1e-4)  # small lr will make the training process very slow, large lr may cause overshooting
-    parser.add_argument('--lr_drop', default=[80, 160, 240])
+    parser.add_argument('--lr_drop', type=aslist, choices=[[160, 260]
+                                              ], default=[160, 260])
     parser.add_argument('--wd', type=float, choices=[5e-4,  # https://github.com/szagoruyko/wide-residual-networks/blob/master/logs/vgg_24208029/
                                                      1e-4,
                                                      1e-3,
@@ -49,7 +56,8 @@ def parse_args():
     parser.add_argument('--n_folds', type=int, default=5)
     parser.add_argument('--fold', type=int, default=-1)
 
-    parser.add_argument('--n_epochs', type=int, default=300)
+    parser.add_argument('--n_epochs', type=int, choices=[300
+                                                         ], default=300)
     parser.add_argument('--n_threads', type=int, choices=[24,
                                                      12,
                                                      6
