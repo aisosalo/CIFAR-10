@@ -65,42 +65,50 @@ def unpickle(file):
     return cifar_dict
 
 
-def init_dataset(path, dataset):  # path = kvs['args'].dataset_root
-        if 'CIFAR10' == dataset:
-        train_list = [
-            ['data_batch_1', 'c99cafc152244af753f735de768cd75f'],
-            ['data_batch_2', 'd4bba439e000b95fd0a9bffe97cbabec'],
-            ['data_batch_3', '54ebc095f3ab1f0389bbae665268c751'],
-            ['data_batch_4', '634d18415352ddfa80567beed471001a'],
-            ['data_batch_5', '482c414d41f54cd18b22e5b47cb7c3cb'],
-        ]
-        #test_list = [
-        #   ['test_batch', '40351d587109b95175f43aff81a1287e'],
-        #]
+def init_dataset(path, dataset, batch='train'):  # path = kvs['args'].dataset_root
+    if 'CIFAR10' == dataset:
+        if 'train' == batch:
+            batch_list = [
+                ['data_batch_1', 'c99cafc152244af753f735de768cd75f'],
+                ['data_batch_2', 'd4bba439e000b95fd0a9bffe97cbabec'],
+                ['data_batch_3', '54ebc095f3ab1f0389bbae665268c751'],
+                ['data_batch_4', '634d18415352ddfa80567beed471001a'],
+                ['data_batch_5', '482c414d41f54cd18b22e5b47cb7c3cb'],
+            ]
+        elif 'test' == batch:
+            batch_list = [
+                ['test_batch', '40351d587109b95175f43aff81a1287e'],
+            ]
+        else:
+            raise NotImplementedError
     elif 'CIFAR100' == dataset:
-        train_list = [
-            ['train', '16019d7e3df5f24257cddd939b257f8d'],
-        ]
-        #test_list = [
-        #   ['test', 'f0ef6b0ae62326f3e7ffdfab6717acfc'],
-        #]
+        if 'train' == batch:
+            batch_list = [
+                ['train', '16019d7e3df5f24257cddd939b257f8d'],
+            ]
+        elif 'test' == batch:
+            batch_list = [
+                ['test', 'f0ef6b0ae62326f3e7ffdfab6717acfc'],
+            ]
+        else:
+            raise NotImplementedError
     else:
         raise NotImplementedError
 
     path = os.path.join(path, dataset)
+
     ds = []
-    for entry in train_list:
+    for entry in batch_list:
         print(colored('====> ', 'blue') + 'Processing file: ', os.path.join(path, entry[0]))
         batch = unpickle(os.path.join(path, entry[0]))
         tmp = batch[b'data']
         ds.append(tmp)
 
     ds = np.concatenate(ds)
-    ds_len = len(ds)
-    ds = ds.reshape(ds_len, 3, 32, 32).swapaxes(1, 3).swapaxes(1, 2)
+    l_dataset = len(ds)
+    ds = ds.reshape(l_dataset, 3, 32, 32).swapaxes(1, 3).swapaxes(1, 2)
 
-    return ds, ds_len
-
+    return ds, l_dataset
 
 def init_metadata():
     kvs = GlobalKVS()
