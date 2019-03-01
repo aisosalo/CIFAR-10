@@ -16,7 +16,6 @@ import pandas as pd
 import solt.data as sld
 
 import cv2
-
 cv2.ocl.setUseOpenCL(False)
 cv2.setNumThreads(0)
 
