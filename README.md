@@ -135,9 +135,9 @@ Evaluation has been run using the model for which the validation loss was the be
 
 ## Acknowledgements
 
-[Research Unit of Medical Imaging, Physics and Technology](http://www.mipt-oulu.fi/) is acknowledged for providing the hardware for running the experiments.
-
 [Aleksei Tiulpin](https://github.com/lext) is acknowledged for kindly providing access to his pipeline scripts and giving his permission to reproduce and modify his pipeline for this task.
+
+[Research Unit of Medical Imaging, Physics and Technology](http://www.mipt-oulu.fi/) is acknowledged for making it possible to run the experiments.
 
 
 ## Authors
