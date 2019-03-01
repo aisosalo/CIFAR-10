@@ -116,13 +116,13 @@ Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey
 
 ![Validation accuracy over time](https://github.com/aisosalo/CIFAR-10/blob/master/plots/Accuracy_fold_0_2019_02_25_06_20.png)
 
-![Confusion Matrix, Epoch 39](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_39_2019_02_24_19_54.png)
+![Confusion Matrix, Epoch 40](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_39_2019_02_24_19_54.png)
 
-![Confusion Matrix, Epoch 79](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_79_2019_02_24_20_51.png)
+![Confusion Matrix, Epoch 80](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_79_2019_02_24_20_51.png)
 
-![Confusion Matrix, Epoch 119](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_119_2019_02_24_22_02.png)
+![Confusion Matrix, Epoch 120](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_119_2019_02_24_22_02.png)
 
-![Confusion Matrix, Epoch 159](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_159_2019_02_24_23_27.png)
+![Confusion Matrix, Epoch 160](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_159_2019_02_24_23_27.png)
 
 ## Evaluation
 
