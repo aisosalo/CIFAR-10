@@ -92,13 +92,13 @@ def ev(net, loader):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset_root', default='/data/')
-    parser.add_argument('--metadata_root', default='/data/')
+    parser.add_argument('--dataset_root', default='data/')
+    parser.add_argument('--metadata_root', default='metadata/')
     parser.add_argument('--dataset_name', choices=['CIFAR10',
                                                    'CIFAR100',
                                                    ], default='CIFAR10')
-    parser.add_argument('--snapshots', default='/snapshots/CIFAR10')
-    parser.add_argument('--snapshot', default='')
+    parser.add_argument('--snapshots', default='snapshots/CIFAR10')
+    parser.add_argument('--snapshot', default='')  # folder in args.snapshots
 
     args = parser.parse_args()
 
@@ -138,7 +138,7 @@ if __name__ == "__main__":
 
     dataset, dataset_length = init_dataset(args.dataset_root, args.dataset_name, batch='test')
 
-    metadata = pd.read_csv(os.path.join(args.metadata_root, args.dataset_name, args.dataset_name + '_test_filenames.csv'))
+    metadata = pd.read_csv(os.path.join(args.metadata_root, args.dataset_name, 'test_meta.csv'))
 
     eval_dataset = ImageClassificationDataset(dataset, metadata, args.color_space, eval_trf)
 

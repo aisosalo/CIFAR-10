@@ -115,7 +115,7 @@ def init_dataset(path, dataset, batch='train'):  # path = kvs['args'].dataset_ro
 def init_metadata():
     kvs = GlobalKVS()
 
-    meta = pd.read_csv(os.path.join(kvs['args'].metadata_root, kvs['args'].dataset_name, kvs['args'].train_meta'))
+    meta = pd.read_csv(os.path.join(kvs['args'].metadata_root, kvs['args'].dataset_name, kvs['args'].train_meta))
 
     print(f'Dataset (form CSV file) has {meta.shape[0]} entries')
 

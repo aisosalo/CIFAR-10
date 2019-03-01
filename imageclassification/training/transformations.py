@@ -34,7 +34,7 @@ def init_mean_std(dataset, batch_size, n_threads, save_mean_std, color_space='rg
         tmp_loader = DataLoader(dataset, batch_size=batch_size, num_workers=n_threads)
         mean_vector = None
         std_vector = None
-        print(colored('==> ', 'green') + 'Calculating mean and std')
+        print(colored('==> ', 'green') + 'Calculating Mean and Standard Deviation')
 
         for batch in tmp_loader:
             imgs = batch['img']

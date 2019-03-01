@@ -82,9 +82,9 @@ def build_cifar100_metadata(batch_list, expected_len):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset_root',
-                        default='')  # working dir
+                        default='data/')  # working dir
     parser.add_argument('--metadata_root',
-                        default='')  # working dir
+                        default='metadata/')  # working dir
 
     parser.add_argument('--dataset', choices=['CIFAR10',
                                               'CIFAR100',
@@ -95,9 +95,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Create folders
-    os.makedirs(os.path.join(args.dataset_root), exist_ok=True)
+    os.makedirs(args.dataset_root, exist_ok=True)
     os.makedirs(os.path.join(args.dataset_root, args.dataset + '/'), exist_ok=True)
     os.makedirs(args.metadata_root, exist_ok=True)
+    os.makedirs(os.path.join(args.metadata_root, args.dataset + '/'), exist_ok=True)
 
     # Set path
     path = args.dataset_root + args.dataset + '/'
