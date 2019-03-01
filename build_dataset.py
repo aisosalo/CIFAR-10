@@ -95,9 +95,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Create folders
-    os.makedirs(os.path.join(args.dataset_root), exist_ok=True)
+    os.makedirs(args.dataset_root, exist_ok=True)
     os.makedirs(os.path.join(args.dataset_root, args.dataset + '/'), exist_ok=True)
     os.makedirs(args.metadata_root, exist_ok=True)
+    os.makedirs(os.path.join(args.metadata_root, args.dataset + '/'), exist_ok=True)
 
     # Set path
     path = args.dataset_root + args.dataset + '/'
