@@ -55,9 +55,12 @@ class ImageClassificationDataset(data.Dataset):
 
 
 def unpickle(file):
-    '''
-    https://www.cs.toronto.edu/~kriz/cifar.html
-    '''
+    """
+    Source: https://www.cs.toronto.edu/~kriz/cifar.html
+
+    :param file: Python object produced with cPickle
+    :return: dictionary
+    """
     with open(file, 'rb') as fo:
         cifar_dict = pickle.load(fo, encoding='bytes')
 
@@ -146,15 +149,14 @@ def unpack_solt_data(dc: sld.DataContainer):
 
 
 def apply_by_index(items, transform, idx=0):
-    """Applies callable to certain objects in iterable using given indices.
+    """
+    Applies callable to certain objects in iterable using given indices.
     Parameters
-    ----------
-    items: tuple or list
-    transform: callable
-    idx: int or tuple or or list None
-    Returns
-    -------
-    result: tuple
+
+    :param items: tuple or list
+    :param transform: callable
+    :param idx: int or tuple or or list None
+    :return: tuple
     """
     if idx is None:
         return items
