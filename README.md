@@ -9,14 +9,12 @@ The CIFAR-10 dataset, as it is provided, consists of 5 batches of training image
 
 Each test batch consists of exactly 1000 randomly-selected images from each class. The training batches contain images in random order, some training batches having more images from one class than another. Together, the training batches contain exactly 5000 images from each class.
 
-Here we have used for training and validation purposes only the 50000 images originally meant for training. [Stratified K-Folds cross-validation]()is used to split the data so that the percentage of samples for each class is preserved. Several other reported implementations use the data as it is given and use the given 10000 sample testing set for validation.
+Here we have used for training and validation purposes only the 50000 images originally meant for training. [Stratified K-Folds cross-validation]()is used to split the data so that the percentage of samples for each class is preserved. Several other reported implementations use the data as it is given and use the given 10000 sample testing set for validation. Instead we use the 10000 sample test set for evaluating our trained model.
 
 
 ## Model
 
-We have made a PyTorch implementations of [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch) and [Sergey Zagoruyko and Nikos Komodakis](https://github.com/szagoruyko/wide-residual-networks) VGG like networks for the task.
-
-### VGG with BatchNormalization and Dropout
+We have made a PyTorch implementation of [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch) VGG like network with BatchNormalization and Dropout for the task.
 
 ```
 DataParallel(
@@ -87,80 +85,14 @@ DataParallel(
 )
 ```
 
-### VGG with BatchNormalization without Dropout 
-
-```
-DataParallel(
-  (module): VGG(
-    (features): Sequential(
-      (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (1): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (2): ReLU(inplace)
-      (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (4): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (5): ReLU(inplace)
-      (6): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
-      (7): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (8): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (9): ReLU(inplace)
-      (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (11): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (12): ReLU(inplace)
-      (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
-      (14): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (15): BatchNorm2d(256, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (16): ReLU(inplace)
-      (17): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (18): BatchNorm2d(256, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (19): ReLU(inplace)
-      (20): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (21): BatchNorm2d(256, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (22): ReLU(inplace)
-      (23): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (24): BatchNorm2d(256, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (25): ReLU(inplace)
-      (26): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
-      (27): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (28): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (29): ReLU(inplace)
-      (30): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (31): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (32): ReLU(inplace)
-      (33): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (34): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (35): ReLU(inplace)
-      (36): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (37): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (38): ReLU(inplace)
-      (39): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
-      (40): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (41): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (42): ReLU(inplace)
-      (43): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (44): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (45): ReLU(inplace)
-      (46): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (47): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (48): ReLU(inplace)
-      (49): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (50): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
-      (51): ReLU(inplace)
-    )
-    (classifier): Sequential(
-      (0): Linear(in_features=512, out_features=10, bias=True)
-    )
-  )
-)
-```
-
 
 ## Data Augmentations
 
 In this implementation we only use [horizontal flips](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.RandomFlip). The images are padded into size `34x34` using [reflective padding](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.PadTransform) and then crop the images back into size `32x32`. [Random cropping](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.CropTransform) is used as an augmentation in the training and then [center cropping](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.CropTransform) in the validation phase.
 
-In their experiments, [Sergey Zagoruyko and Nikos Komodakis](https://github.com/szagoruyko/wide-residual-networks) sem to have used whitened data. We use here the original data.
+In their experiments, [Sergey Zagoruyko and Nikos Komodakis](https://github.com/szagoruyko/wide-residual-networks) seem to have used whitened data. We use here the original data.
 
-`YUV` color space was proposed to be used by [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch). We run our experimets without the `RGB` to `YUV` conversion.
+`YUV` color space was proposed to be used by [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch). We have run our experimets without the `RGB` to `YUV` conversion.
 
 Data is normalized in the usual way with mean and standard deviation calculated across the 50000 images, as it can, e.g., speed up the training.
 
@@ -170,7 +102,7 @@ Data is normalized in the usual way with mean and standard deviation calculated 
 In PyCharm
 
 ```
-$ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vggbndrop --bs 64 --optimizer sgd --lr 0.1 --wd 5e-4 --learning_rate_decay 0.2 --color_space rgb --set_nesterov True
+$ run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vggbndrop --bs 128 --optimizer sgd --lr 0.1 --lr_drop "[160, 260]" --n_epochs 300 --wd 5e-4 --learning_rate_decay 0.2 --n_threads 12 --color_space yuv --set_nesterov True
 ```
 
 
@@ -183,10 +115,12 @@ Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey
 
 [Research Unit of Medical Imaging, Physics and Technology](http://www.mipt-oulu.fi/) is acknowledged for providing the hardware for running the experiments.
 
+[Aleksei Tiulpin](https://github.com/lext) is acknowledged for kindly giving his permission to reproduce and adjust his pipeline scripts for this task.
+
 
 ## Authors
 
-[Antti Isosalo](https://github.com/aisosalo/) & [Aleksei Tiulpin](https://github.com/lext), [University of Oulu](https://www.oulu.fi/university/), 2018-
+[Antti Isosalo](https://github.com/aisosalo/), [University of Oulu](https://www.oulu.fi/university/), 2018-
 
 
 ## References
