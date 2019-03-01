@@ -2,7 +2,7 @@
 
 This package contains PyTorch implementations of [Sergey Zagoruyko](https://github.com/szagoruyko/cifar.torch) and [Sergey Zagoruyko and Nikos Komodakis](https://github.com/szagoruyko/wide-residual-networks) VGG like networks.
 
-### VGG with BatchNormalization and Dropout
+## VGG with BatchNormalization and Dropout
 
 ```
 DataParallel(
@@ -73,7 +73,7 @@ DataParallel(
 )
 ```
 
-### VGG with BatchNormalization without Dropout 
+## VGG with BatchNormalization without Dropout 
 
 ```
 DataParallel(
