@@ -112,6 +112,8 @@ Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey
 
 ### Training and validation
 
+As can be seen from the curves representing loss over time, the model starts to overfit around epoch 164.
+
 ![Loss over time](https://github.com/aisosalo/CIFAR-10/blob/master/plots/Loss_fold_0_2019_02_25_06_20.png)
 
 ![Validation accuracy over time](https://github.com/aisosalo/CIFAR-10/blob/master/plots/Accuracy_fold_0_2019_02_25_06_20.png)
@@ -125,6 +127,8 @@ Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey
 ![Confusion Matrix, Validation, Epoch 160](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_159_2019_02_24_23_27.png)
 
 ### Evaluation
+
+Evaluation has been run using the model for which the validation loss was the ![best](https://github.com/aisosalo/CIFAR-10/blob/master/imageclassification/training/session.py#L152-L178).
 
 ![Confusion Matrix, Evaluation](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_evaluation_2019_02_25.png)
 
