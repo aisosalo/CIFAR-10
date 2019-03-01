@@ -41,7 +41,7 @@ def parse_args():
                                                      1e-3,
                                                      1e-2,
                                                      1e-1  # https://github.com/szagoruyko/wide-residual-networks/blob/master/logs/vgg_24208029/
-                                                     ], default=1e-4)  # small lr will make the training process very slow, large lr may cause overshooting
+                                                     ], default=1e-4)
     parser.add_argument('--lr_drop', type=aslist, choices=[[160, 260]
                                               ], default=[160, 260])
     parser.add_argument('--wd', type=float, choices=[5e-4,  # https://github.com/szagoruyko/wide-residual-networks/blob/master/logs/vgg_24208029/
