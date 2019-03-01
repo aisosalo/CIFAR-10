@@ -112,7 +112,7 @@ Here we provide the results related to the `VGGBNDrop` model proposed by [Sergey
 
 ### Training and validation
 
-![Loss over time](https://github.com/aisosalo/CIFAR-10/blob/master/plots/Loss_fold_0_2019_02_25_06_20.png)
+![Loss over time](https://github.com/aisosalo/CIFAR-10/blob/master/plots/Loss_fold_0_2019_02_25_06_20.png){ width="200" height="200" style="display: block; margin: 0 auto" }
 
 ![Validation accuracy over time](https://github.com/aisosalo/CIFAR-10/blob/master/plots/Accuracy_fold_0_2019_02_25_06_20.png)
 
