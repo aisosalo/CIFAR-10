@@ -122,6 +122,8 @@ As can be seen from the curves representing loss over time, the model starts to 
   <img src="https://github.com/aisosalo/CIFAR-10/blob/master/plots/Accuracy_fold_0_2019_02_25_06_20.png" title="Validation accuracy over time">
 </p>
 
+From the confusion matrices below related to the validation accuracy curve, we can see how the learning progresses.
+
 <p align="center">
   <img src="https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_fold_0_epoch_39_2019_02_24_19_54.png" title="Confusion Matrix, Validation, Epoch 40">
 </p>
