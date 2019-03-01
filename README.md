@@ -128,7 +128,7 @@ As can be seen from the curves representing loss over time, the model starts to 
 
 ### Evaluation
 
-Evaluation has been run using the model for which the validation loss was the ![best](https://github.com/aisosalo/CIFAR-10/blob/master/imageclassification/training/session.py#L152-L178).
+Evaluation has been run using the model for which the validation loss was the best (see ![`session`](https://github.com/aisosalo/CIFAR-10/blob/master/imageclassification/training/session.py#L152-L178)).
 
 ![Confusion Matrix, Evaluation](https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_evaluation_2019_02_25.png)
 
