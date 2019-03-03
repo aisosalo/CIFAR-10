@@ -9,7 +9,7 @@ The CIFAR-10 dataset, as it is provided, consists of 5 batches of training image
 
 Each test batch consists of exactly 1000 randomly-selected images from each class. The training batches contain images in random order, some training batches having more images from one class than another. Together, the training batches contain exactly 5000 images from each class.
 
-Here we have used for training and validation purposes only the 50000 images originally meant for training. [Stratified K-Folds cross-validation]()is used to split the data so that the percentage of samples for each class is preserved. Several other reported implementations use the data as it is given and use the given 10000 sample testing set for validation. Instead we use the 10000 sample test set for evaluating our trained model.
+Here we have used for training and validation purposes only the 50000 images originally meant for training. [Stratified K-Folds cross-validation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html) is used to split the data so that the percentage of samples for each class is preserved. Several other reported implementations use the data as it is given and use the given 10000 sample testing set for validation. Instead we use the 10000 sample test set for evaluating our trained model.
 
 
 ## Model
