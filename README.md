@@ -9,7 +9,7 @@ The CIFAR-10 dataset, as it is provided, consists of 5 batches of training image
 
 Each test batch consists of exactly 1000 randomly-selected images from each class. The training batches contain images in random order, some training batches having more images from one class than another. Together, the training batches contain exactly 5000 images from each class.
 
-Here we have used for training and validation purposes only the 50000 images originally meant for training. [Stratified K-Folds cross-validation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html) is used to split the data so that the percentage of samples for each class is preserved. Several other reported implementations use the data as it is given and use the given 10000 sample testing set for validation. Instead we use the 10000 sample test set for evaluating our trained model.
+Here we have used for training and validation purposes only the 50000 images originally meant for training. [Stratified K-Folds cross-validation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html) is used to split the data so that the percentage of samples for each class is preserved. Several other reported implementations use the data as it is given and use the given 10000 sample testing set straight for validation. Instead we use the 10000 sample test set for evaluating our trained model.
 
 
 ## Model
@@ -88,7 +88,7 @@ DataParallel(
 
 ## Data Augmentations
 
-In this implementation we only use [horizontal flips](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.RandomFlip). The images are padded into size `34x34` using [reflective padding](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.PadTransform) and then crop the images back into size `32x32`. [Random cropping](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.CropTransform) is used as an augmentation in the training and then [center cropping](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.CropTransform) in the validation phase. Moreover, [`solt`](https://mipt-oulu.github.io/solt/) is used for the data augmentations.
+In this implementation we only use [horizontal flips](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.RandomFlip). WE pad the images into size `34x34` using [reflective padding](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.PadTransform) and then crop the images back into size `32x32`. [Random cropping](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.CropTransform) is used as an augmentation in the training and then [center cropping](https://mipt-oulu.github.io/solt/transforms.html#solt.transforms.CropTransform) in the validation phase. Moreover, [`solt`](https://mipt-oulu.github.io/solt/) is used for the data augmentations.
 
 In their experiments, [Sergey Zagoruyko and Nikos Komodakis](https://github.com/szagoruyko/wide-residual-networks) seem to have used whitened data. We use here the original data.
 
@@ -142,7 +142,7 @@ From the confusion matrices below related to the validation accuracy curve, we c
 
 ### Evaluation
 
-Evaluation has been run using the model for which the validation loss was the best (see [`session.py`](https://github.com/aisosalo/CIFAR-10/blob/master/imageclassification/training/session.py#L152-L178) for details).
+Evaluation has been run using the model for which the validation loss was the best (see [`session`](https://github.com/aisosalo/CIFAR-10/blob/master/imageclassification/training/session.py#L152-L178) for details).
 
 <p align="center">
   <img src="https://github.com/aisosalo/CIFAR-10/blob/master/plots/CM_evaluation_2019_02_25.png" title="Confusion Matrix, Evaluation">
