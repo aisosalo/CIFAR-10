@@ -109,11 +109,11 @@ def init_loaders(dataset, x_train, x_val):
     kvs = GlobalKVS()
 
     train_dataset = ImageClassificationDataset(dataset,
-                                         split=x_train,
+                                         split=x_train,  #, color_space=kvs['args'].color_space
                                          transformations=kvs['train_trf'])
 
     val_dataset = ImageClassificationDataset(dataset,
-                                       split=x_val,
+                                       split=x_val,  #, color_space=kvs['args'].color_space
                                        transformations=kvs['val_trf'])
 
     train_loader = DataLoader(train_dataset,
