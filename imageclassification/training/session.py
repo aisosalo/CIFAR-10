@@ -78,6 +78,8 @@ def init_data_processing(ds):
                                                    save_mean_std=kvs['args'].snapshots + '/' + kvs['args'].dataset_name,
                                                    color_space = kvs['args'].color_space)
 
+    print('Color space: ', kvs['args'].color_space)
+
     print(colored('====> ', 'red') + 'Mean:', mean_vector)
     print(colored('====> ', 'red') + 'Std:', std_vector)
 
@@ -109,11 +111,13 @@ def init_loaders(dataset, x_train, x_val):
     kvs = GlobalKVS()
 
     train_dataset = ImageClassificationDataset(dataset,
-                                         split=x_train,  #, color_space=kvs['args'].color_space
+                                         split=x_train,
+                                         color_space=kvs['args'].color_space,
                                          transformations=kvs['train_trf'])
 
     val_dataset = ImageClassificationDataset(dataset,
-                                       split=x_val,  #, color_space=kvs['args'].color_space
+                                       split=x_val,
+                                       color_space=kvs['args'].color_space,
                                        transformations=kvs['val_trf'])
 
     train_loader = DataLoader(train_dataset,
