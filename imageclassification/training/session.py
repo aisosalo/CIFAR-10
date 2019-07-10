@@ -76,7 +76,7 @@ def init_data_processing(ds):
                                                    batch_size=kvs['args'].bs,
                                                    n_threads=kvs['args'].n_threads,
                                                    save_mean_std=kvs['args'].snapshots + '/' + kvs['args'].dataset_name,
-                                                   color_space = kvs['args'].color_space)
+                                                   color_space=kvs['args'].color_space)
 
     print('Color space: ', kvs['args'].color_space)
 
