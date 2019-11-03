@@ -31,6 +31,7 @@ if __name__ == "__main__":
 
     for fold_id in kvs['cv_split_train']:
         kvs.update('cur_fold', fold_id)
+        kvs.update('prev_model', None)
         
         print(colored('====> ', 'blue') + f'Training fold {fold_id}...')
 
@@ -49,7 +50,6 @@ if __name__ == "__main__":
 
         for epoch in range(kvs['args'].n_epochs):
             kvs.update('cur_epoch', epoch)
-            kvs.update('prev_model', None)
 
             print(colored('====> ', 'red') + 'Learning rate: ', str(scheduler.get_lr())[1:-1])
             train_loss = utilities.train_epoch(net, optimizer, train_loader)
