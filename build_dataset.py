@@ -89,9 +89,6 @@ if __name__ == "__main__":
     parser.add_argument('--dataset', choices=['CIFAR10',
                                               'CIFAR100',
                                              ], default='CIFAR10')
-
-    parser.add_argument('--num_workers', type=int, default=12)
-    parser.add_argument('--seed', type=int, default=2222)
     args = parser.parse_args()
 
     # Create folders
