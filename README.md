@@ -96,7 +96,7 @@ In their experiments, [Sergey Zagoruyko and Nikos Komodakis](https://github.com/
 
 Data is normalized in the usual way with mean and standard deviation calculated across the 50000 images, as it can, e.g., speed up the training.
 
-## Setting up the data
+## Setting up the data for training
 
 From PyCharm Terminal
 
@@ -166,9 +166,9 @@ Evaluation has been run using the model for which the validation loss was the be
 
 ## Acknowledgements
 
-[Aleksei Tiulpin](https://github.com/lext) is acknowledged for kindly providing access to his pipeline scripts and giving his permission to reproduce and modify his pipeline for this task.
+[Aleksei Tiulpin](https://github.com/lext/) is acknowledged for kindly providing access to his pipeline scripts and giving his permission to reproduce and modify his pipeline for this task.
 
-[Research Unit of Medical Imaging, Physics and Technology](http://www.mipt-oulu.fi/) is acknowledged for making it possible to run the experiments.
+[Research Unit of Medical Imaging, Physics and Technology](https://www.oulu.fi/mipt/) is acknowledged for making it possible to run the experiments.
 
 
 ## Authors
