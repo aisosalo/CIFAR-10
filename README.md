@@ -96,6 +96,13 @@ In their experiments, [Sergey Zagoruyko and Nikos Komodakis](https://github.com/
 
 Data is normalized in the usual way with mean and standard deviation calculated across the 50000 images, as it can, e.g., speed up the training.
 
+## Setting up the data
+
+From PyCharm Terminal
+
+```
+$ python build_dataset.py --dataset CIFAR10
+```
 
 ## Training
 
