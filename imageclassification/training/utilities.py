@@ -18,7 +18,7 @@ def init_model():
     net = mdl.get_model(kvs['args'].experiment, kvs['args'].num_classes)
 
     if kvs['gpus'] > 1:
-        net = nn.DataParallel(net).to('cuda')
+        net = nn.DataParallel(net)  #.to('cuda')
 
     net = net.to('cuda')
     return net
