@@ -30,6 +30,8 @@ import imageclassification.training.transformations as trnsfs
 PAD_TO = 34
 CROP_SIZE = 32
 
+DEBUG = sys.gettrace() is not None
+
 
 def init_session():
     if not torch.cuda.is_available():
@@ -38,6 +40,9 @@ def init_session():
     kvs = GlobalKVS()
 
     args = parse_args()
+    
+    if DEBUG:
+        args.n_threads = 0
 
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed(args.seed)
