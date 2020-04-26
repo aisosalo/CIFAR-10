@@ -41,17 +41,14 @@ DEBUG = sys.gettrace() is not None
 print('Debug: ', DEBUG)
 
 
-def ev(net, loader):
-    net.eval()
+def ev(model, device, loader):
+    model.eval()
 
     running_loss = 0.0
     n_batches = len(loader)
 
-    device = next(net.parameters()).device
-
     probs_lst = []
     gt_lst = []
-    net.eval()
 
     pbar = tqdm(total=n_batches)
 
@@ -62,7 +59,7 @@ def ev(net, loader):
             labels = batch['label'].long().to(device)
             inputs = batch['img'].to(device)
 
-            outputs = net(inputs)
+            outputs = model(inputs)
 
             loss = F.cross_entropy(outputs, labels)
 
@@ -98,7 +95,7 @@ if __name__ == "__main__":
                                                    'CIFAR100',
                                                    ], default='CIFAR10')
     parser.add_argument('--snapshots', default='snapshots/CIFAR10')
-    parser.add_argument('--snapshot', default='')  # subfolder in snapshots
+    parser.add_argument('--snapshot', default='2020_01_01_00_01')  # subfolder in snapshots
 
     args = parser.parse_args()
 
@@ -146,10 +143,11 @@ if __name__ == "__main__":
 
     net = mdl.get_model(args.experiment, args.num_classes)
     net.load_state_dict(torch.load(previous_model, map_location=lambda storage, location: storage))
-    net.eval()
-    net = net.to('cuda')
+    
+    device = next(net.parameters()).device
+    net = net.to(device)
 
-    eval_out = ev(net, eval_loader)
+    eval_out = ev(net, device, eval_loader)
     eval_loss, preds, gt, eval_acc = eval_out
 
     cm = confusion_matrix(gt, preds.argmax(1))
