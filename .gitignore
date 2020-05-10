@@ -134,10 +134,8 @@ venv.bak/
 # Folders
 data/
 metadata/
-venv/
 snapshots/
 log/
-__pycache__/
 logs/
 .idea/
 
