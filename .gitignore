@@ -138,6 +138,3 @@ snapshots/
 log/
 logs/
 .idea/
-
-# Files
-temp.py
