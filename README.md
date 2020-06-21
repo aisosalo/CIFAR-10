@@ -109,7 +109,7 @@ $ python build_dataset.py --dataset CIFAR10
 From PyCharm Terminal
 
 ```
-$ python run_experiments.py --dataset_name CIFAR10 --num_classes 10 --experiment vggbndrop --bs 128 --optimizer sgd --lr 0.1 --lr_drop "[160, 260]" --n_epochs 300 --wd 5e-4 --learning_rate_decay 0.2 --n_threads 12 --color_space rgb --set_nesterov True
+$ python run_training.py --dataset_name CIFAR10 --num_classes 10 --experiment vggbndrop --bs 128 --optimizer sgd --lr 0.1 --lr_drop "[160, 260]" --n_epochs 300 --wd 5e-4 --learning_rate_decay 0.2 --n_threads 12 --color_space rgb --set_nesterov True
 ```
 
 

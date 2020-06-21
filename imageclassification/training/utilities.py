@@ -88,7 +88,6 @@ def validate_epoch(net, test_loader):
 
     probs_lst = []
     gt_lst = []
-    net.eval()
 
     pbar = tqdm(total=n_batches)
 
