@@ -1,8 +1,11 @@
 import sys
-print(sys.version, sys.platform, sys.executable)
+import gc
 
 from termcolor import colored
 
+import matplotlib.pyplot as plt
+
+import torch
 from torch.optim.lr_scheduler import MultiStepLR
 
 from imageclassification.kvs import GlobalKVS
@@ -14,6 +17,8 @@ import imageclassification.training.metrics as metrics
 import cv2
 cv2.ocl.setUseOpenCL(False)
 cv2.setNumThreads(0)
+
+print(sys.version, sys.platform, sys.executable)
 
 DEBUG = sys.gettrace() is not None
 print('Debug: ', DEBUG)
@@ -48,6 +53,9 @@ if __name__ == "__main__":
 
         scheduler = MultiStepLR(optimizer, milestones=kvs['args'].lr_drop, gamma=kvs['args'].learning_rate_decay)
 
+        train_losses = []
+        val_losses = []
+
         for epoch in range(kvs['args'].n_epochs):
             kvs.update('cur_epoch', epoch)
 
@@ -64,3 +72,20 @@ if __name__ == "__main__":
             session.save_checkpoint(net, 'val_loss', 'lt')  # lt, less than
             
             scheduler.step()
+
+            gc.collect()
+
+            train_losses.append(train_loss)
+            val_losses.append(val_loss)
+
+        plt.plot(train_losses, label='Training loss')
+        plt.plot(val_losses, label='Validation loss')
+        plt.xlabel('Epoch')
+        plt.ylabel('Loss')
+        plt.legend()
+        plt.show()
+
+        del net
+
+        torch.cuda.empty_cache()
+        gc.collect()

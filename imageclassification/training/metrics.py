@@ -25,12 +25,11 @@ def log_metrics(boardlogger, train_loss, val_loss, gt, preds):
 
     boardlogger.add_scalars('Losses', {'train': train_loss, 'val': val_loss}, kvs['cur_epoch'])
 
-    boardlogger.add_scalars('Metrics', {f'Acc_{kvs["args"].experiment}': res['acc']}, kvs['cur_epoch'])
+    boardlogger.add_scalars('Metrics', {f'acc_{kvs["args"].experiment}': acc}, kvs['cur_epoch'])
 
     kvs.update(f'losses_fold_[{kvs["cur_fold"]}]', {'epoch': kvs['cur_epoch'],
                                                     'train_loss': train_loss,
-                                                    'val_loss': val_loss,
-                                                    'acc': acc})
+                                                    'val_loss': val_loss})
 
     kvs.update(f'val_metrics_fold_[{kvs["cur_fold"]}]', res)
 
