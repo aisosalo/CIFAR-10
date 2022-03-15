@@ -186,7 +186,7 @@ Evaluation has been run using the model for which the validation loss was the be
 
 ### Data Augmentation
 
-* Tiulpin, Aleksei, "[Streaming Over Lightweight Data Transformations](https://mipt-oulu.github.io/solt/)." Research Unit of Medical Imaging, Physics and Technology, University of Oulu, Finalnd, 2018.
+* Tiulpin, Aleksei, "[Streaming Over Lightweight Data Transformations](https://oulu-imeds.github.io/solt/)." Research Unit of Medical Imaging, Physics and Technology, University of Oulu, Finalnd, 2018.
 
 ### Dataset
 
